@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @posts = Blog.all
+    @skills = Skill.all
     # ^^ Here we are calling the Blog model, asking for all() of what it has,
     # and storing the results in an instance variable. Apparently you have access
     # to any model from any controller. By assigning the output to an instance
