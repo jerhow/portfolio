@@ -22,6 +22,24 @@ class PortfolioItemsController < ApplicationController
     end
   end
 
+  def edit
+    @portfolio_item = PortfolioItem.find(params[:id])
+  end
+
+  def update
+    @portfolio_item = PortfolioItem.find(params[:id])
+    
+    respond_to do |format|
+      if @portfolio_item.update(blog_params)
+        format.html { redirect_to portfolio_items_path, notice: 'Record was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @blog }
+      else
+        format.html { render :edit }
+        # format.json { render json: @blog.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
