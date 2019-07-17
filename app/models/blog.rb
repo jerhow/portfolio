@@ -1,4 +1,6 @@
 class Blog < ApplicationRecord
+
+  enum status: {draft: 0, published: 1}
   
   # This is mixing in the FriendlyId class so that this model has access to its methods
   # (as class methods - they would be instance methods if 'include' was used
