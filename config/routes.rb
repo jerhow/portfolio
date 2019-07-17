@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
   
-  resources :blogs
+  resources :blogs do
+    member do
+      get :toggle_status
+      # ^^ Exposing this route as a GET is a bad idea, as this modifies data.
+      # Jordan said he was going to update this in the lesson, but I don't think that has happened.
+    end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
