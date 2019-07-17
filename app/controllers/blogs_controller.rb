@@ -64,7 +64,13 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.friendly.find(params[:id])
+      # ^^ By adding 'friendly' to this call chain, we are letting the friendly_id gem
+      # override Blog#find such that it now takes the slug and maps it to an ID,
+      # and then doing the lookup normally.
+      #
+      # NOTE: I believe the reason we have access to FriendlyId.friendly is because
+      # we mixed FriendlyId into the Blog model.
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
