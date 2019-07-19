@@ -9,4 +9,6 @@ class Blog < ApplicationRecord
 
   # friendly_id takes Blog's title field and generates a slug from it
   friendly_id :title, use: :slugged
+
+  validates_presence_of :title, :body
 end
