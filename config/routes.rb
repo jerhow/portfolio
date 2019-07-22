@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   # ^^ In this way we can override the default resources value,
   # and also add our own custom route method (the last param, as: 'portfolio_show')
 
+  
+  get 'angular-items', to: 'portfolio_items#angular'
+
+
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
   
