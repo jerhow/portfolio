@@ -4,20 +4,24 @@ class PortfolioItemsController < ApplicationController
     @portfolio_items = PortfolioItem.all
   end
 
+  def angular
+    @angular_portfolio_items = PortfolioItem.angular
+  end
+
   def new
     @portfolio_item = PortfolioItem.new
+    3.times { @portfolio_item.technologies.build }
   end
 
   def create
-    @portfolio_item = PortfolioItem.new(blog_params)
+    @portfolio_item = PortfolioItem.new(params.require(:portfolio_item).permit(
+      :title, :subtitle, :body, technologies_attributes: [:name]))
 
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolio_items_path, notice: 'Portfolio item was successfully created.' }
-        # format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }
-        # format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
