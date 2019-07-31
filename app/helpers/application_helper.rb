@@ -16,4 +16,8 @@ module ApplicationHelper
       content_tag :p, greeting, class: "source-greeting"
     end
   end
+
+  def copyright_helper
+    TechnophobicViewTool::Renderer.copyright('Jerry Howard', 'All rights reserved')
+  end
 end
