@@ -58,3 +58,5 @@ gem 'tzinfo-data', '1.2019.1'
 
 gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
