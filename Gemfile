@@ -60,3 +60,5 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+
+gem 'technophobic_view_tool', git: 'https://github.com/jerhow/technophobic_view_tool'

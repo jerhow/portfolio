@@ -10,11 +10,3 @@ class ApplicationController < ActionController::Base
     @copyright = TechnophobicViewTool::Renderer.copyright('Jerry Howard', 'All rights reserved')
   end
 end
-
-module TechnophobicViewTool
-  class Renderer
-    def self.copyright(name, msg)
-      "&copy; #{Time.now.year} <b>#{name}</b> - #{msg}".html_safe
-    end
-  end
-end
