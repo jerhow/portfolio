@@ -62,3 +62,5 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 gem 'technophobic_view_tool', git: 'https://github.com/jerhow/technophobic_view_tool'
+
+gem 'petergate', '~> 2.0', '>= 2.0.1'
